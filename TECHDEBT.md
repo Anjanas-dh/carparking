@@ -1,0 +1,2 @@
+- ✅ Refactor if elif - combine them into one
+- ⚠ Move input validation to a separate function
