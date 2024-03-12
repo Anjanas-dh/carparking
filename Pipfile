@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
+pytest-watch = "*"
+pytest-pspec = "*"
+pytest-describe = "*"
+
+[requires]
+python_version = "3.12"
