@@ -1,3 +1,6 @@
+from enum import Enum
+
+
 class Position:
     def __init__(self, floor, spot):
         self.floor = floor
@@ -9,6 +12,18 @@ class CarPark:
         self.spaces = spaces
         self.levels = levels
         self.stairsPosition = stairsPosition
+
+
+class Direction:
+    def __init__(self, stepsAmount, walkDirection):
+        self.stepsAmount = stepsAmount
+        self.walkDirection = walkDirection
+
+
+class WalkDirection(Enum):
+    LEFT = "LEFT"
+    RIGHT = "RIGHT"
+    DOWN = "DOWN"
 
 
 def get_car_park_directions(current_position, car_park):
@@ -26,4 +41,7 @@ def get_car_park_directions(current_position, car_park):
         or car_park.stairsPosition < 1
     ):
         return False
-    return True
+
+    if car_park.levels == 1:
+        if car_park.spaces == current_position.spot:
+            return [Direction(1, WalkDirection.RIGHT)]

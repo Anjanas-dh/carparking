@@ -23,15 +23,19 @@ Navigators: Anja & Robert
 Driver: Robert
 Navigators: Hanna & Anja
 
-- ⚠ ✅ Validate input carpark
-- ⚠ ✅ Create a "carpark" class (spaces, levels, stairs position)
-- ⚠ ✅ Validate that the stairs position is within the spaces range
-- ⚠ ✅ Boundary test CarPark: spaces not zero or lower (negative)
-- ⚠ ✅ Boundary test CarPark: levels not zero or lower (negative)
-- ⚠ ✅ Boundary test CarPark: stairPostion not zero or lower (negative)
-- ⚠ Boundary test Position: floor not zero or lower (negative)
-- ⚠ Boundary test Position: spot not zero or lower (negative)
-- ⚠ Boundary test: stairPostion nequal to spaces
-- ⚠ Create a carpark with only a groundfloor and the exit on position 0. 
-- ⚠ Create second floor with static stairs
+- ✅ Validate input carpark
+- ✅ Create a "carpark" class (spaces, levels, stairs position)
+- ✅ Validate that the stairs position is within the spaces range
+- ✅ Boundary test CarPark: spaces not zero or lower (negative)
+- ✅ Boundary test CarPark: levels not zero or lower (negative)
+- ✅ Boundary test CarPark: stairPostion not zero or lower (negative)
+
+
+## 🍅 Pomodoro 4
+Driver: Anja
+Navigators: Hanna & Robert
+- 🚧 Return directions for one simple scenario with only a groundfloor and only 1direction
 - ⚠ Validate if the car is not parked on the stairs space
+- ⚠ Refactor tests to be enjoyable to read
+- Refactor tests to not return True/ False but Directions or Error
+- Build direction validator
