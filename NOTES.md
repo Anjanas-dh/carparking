@@ -26,7 +26,11 @@ Navigators: Hanna & Anja
 - ⚠ ✅ Validate input carpark
 - ⚠ ✅ Create a "carpark" class (spaces, levels, stairs position)
 - ⚠ ✅ Validate that the stairs position is within the spaces range
-- ⚠ Boundary test: stairPostion not zero or lower (negative)
+- ⚠ ✅ Boundary test CarPark: spaces not zero or lower (negative)
+- ⚠ ✅ Boundary test CarPark: levels not zero or lower (negative)
+- ⚠ ✅ Boundary test CarPark: stairPostion not zero or lower (negative)
+- ⚠ Boundary test Position: floor not zero or lower (negative)
+- ⚠ Boundary test Position: spot not zero or lower (negative)
 - ⚠ Boundary test: stairPostion nequal to spaces
 - ⚠ Create a carpark with only a groundfloor and the exit on position 0. 
 - ⚠ Create second floor with static stairs

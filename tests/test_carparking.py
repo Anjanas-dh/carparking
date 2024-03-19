@@ -26,3 +26,27 @@ def describe_carparking():
             )
             == False
         )
+
+    def should_return_false_if_spaces_is_less_than_1():
+        assert (
+            get_car_park_directions(
+                Position(1, 1), CarPark(spaces=-1, levels=1, stairsPosition=1)
+            )
+            == False
+        )
+
+    def should_return_false_if_levels_is_less_than_1():
+        assert (
+            get_car_park_directions(
+                Position(1, 1), CarPark(spaces=1, levels=-1, stairsPosition=1)
+            )
+            == False
+        )
+
+    def should_return_false_if_stairs_Position_is_less_than_1():
+        assert (
+            get_car_park_directions(
+                Position(1, 1), CarPark(spaces=1, levels=1, stairsPosition=-1)
+            )
+            == False
+        )

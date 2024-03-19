@@ -21,6 +21,9 @@ def get_car_park_directions(current_position, car_park):
         or not isinstance(car_park.levels, int)
         or not isinstance(car_park.stairsPosition, int)
         or car_park.stairsPosition > car_park.spaces
+        or car_park.spaces < 1
+        or car_park.levels < 1
+        or car_park.stairsPosition < 1
     ):
         return False
     return True
