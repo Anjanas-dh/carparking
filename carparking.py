@@ -1,4 +1,5 @@
 from enum import Enum
+from dataclasses import dataclass
 
 
 class Position:
@@ -14,6 +15,7 @@ class CarPark:
         self.stairsPosition = stairsPosition
 
 
+@dataclass
 class Direction:
     def __init__(self, stepsAmount, walkDirection):
         self.stepsAmount = stepsAmount
