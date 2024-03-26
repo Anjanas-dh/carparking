@@ -3,5 +3,5 @@
 - ⚠ Boundary test Position: floor not zero or lower (negative)
 - ⚠ Boundary test Position: spot not zero or lower (negative)
 - ⚠ Boundary test: stairPostion nequal to spaces
-- ⚠ Improve naming (level vs floor en spaces vs spots)
-- ⚠ Write a function to compare two Direction objects with each other
+- ✅ Improve naming (level vs floor en spaces vs spots)
+- ✅ Write a function to compare two Direction objects with each other (solved by using a data class)
