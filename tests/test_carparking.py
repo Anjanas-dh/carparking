@@ -106,6 +106,15 @@ def describe_carparking():
             == "3L,1D,4R"
         )
 
+    def should_return_directions_righ1t_if_carpark_level_is_2_and_spot_is_8_to_exit():
+        assert (
+            get_car_park_directions(
+                Position(floor=2, spot=8),
+                CarPark(floors=2, spots=10, stairsPosition=4),
+            )
+            == "4R,1D,4R"
+        )
 
-## | 10 | 9 | 8 | 7 | 6 | 5 | ST | 3 | 2 | 1* |
+
+## | 10 | 9 | 8*| 7 | 6 | 5 | ST | 3 | 2 | 1 |
 ## | 10 | 9 | 8 | 7 | 6 | 5 | ST | 3 | 2 | 1 | Exit
