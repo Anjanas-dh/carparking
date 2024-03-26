@@ -61,21 +61,29 @@ def get_car_park_directions(current_position, car_park):
     else:
         actualSpot = current_position.spot
         ## directions to the stairs
-        stepsToStairs = car_park.stairsPosition - current_position.spot
-        walkToTheRight = stepsToStairs < 0
+        diffSpotFromStairPosition = car_park.stairsPosition - current_position.spot
+        walkToTheRight = diffSpotFromStairPosition < 0
+        stepsToStairs = (
+            abs(diffSpotFromStairPosition)
+            if walkToTheRight
+            else diffSpotFromStairPosition
+        )
         directions.append(
             Direction(
-                stepsAmount=abs(stepsToStairs) if walkToTheRight else stepsToStairs,
+                stepsAmount=stepsToStairs,
                 walkDirection=(
                     WalkDirection.RIGHT if walkToTheRight else WalkDirection.LEFT
                 ),
             )
         )
-        actualSpot = actualSpot + stepsToStairs
+        ## update the spot you're at
+        actualSpot = (
+            actualSpot - stepsToStairs if walkToTheRight else actualSpot + stepsToStairs
+        )
         ## directions downstairs
-        stairsDown = car_park.floors - current_position.floor
+        stairsDown = car_park.floors - current_position.floor + 1
         directions.append(
-            Direction(stepsAmount=stairsDown + 1, walkDirection=WalkDirection.DOWN)
+            Direction(stepsAmount=stairsDown, walkDirection=WalkDirection.DOWN)
         )
         ## steps left to the exit
         directions.append(
