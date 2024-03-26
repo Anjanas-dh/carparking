@@ -23,9 +23,9 @@ class Direction:
 
 
 class WalkDirection(Enum):
-    LEFT = "LEFT"
-    RIGHT = "RIGHT"
-    DOWN = "DOWN"
+    LEFT = "L"
+    RIGHT = "R"
+    DOWN = "D"
 
 
 def get_car_park_directions(current_position, car_park):
@@ -44,6 +44,19 @@ def get_car_park_directions(current_position, car_park):
     ):
         return False
 
-    if car_park.levels == 1:
-        if car_park.spaces == current_position.spot:
-            return [Direction(1, WalkDirection.RIGHT)]
+    return get_directions_string(
+        [
+            Direction(
+                stepsAmount=current_position.spot, walkDirection=WalkDirection.RIGHT
+            )
+        ]
+    )
+
+
+def get_directions_string(directions):
+    return " ".join(
+        map(
+            lambda dir: str(dir.stepsAmount) + dir.walkDirection.value,
+            directions,
+        )
+    )

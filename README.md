@@ -9,10 +9,10 @@
 - Variables are: where the steps are, how many levels there are, how many spaces per level
 - Exit: always on the bottom right
 
-Output: movement and amount of steps. Array: `[3d,5l]`
-l = Left
-r = Right
-d = Down
+Output: movement and amount of steps. String: `3D,5L`
+L = Left
+R = Right
+D = Down
 
 # Commands
 

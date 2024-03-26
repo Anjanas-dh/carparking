@@ -82,6 +82,22 @@ def describe_carparking():
         )
 
     def should_return_directions_1_right_if_carpark_level_is_1_and_position_spot_is_next_to_exit():
-        assert get_car_park_directions(
-            Position(floor=1, spot=1), CarPark(spaces=1, levels=1, stairsPosition=1)
-        ) == [Direction(1, WalkDirection.RIGHT)]
+        assert (
+            get_car_park_directions(
+                Position(floor=1, spot=1), CarPark(spaces=1, levels=1, stairsPosition=1)
+            )
+            == "1R"
+        )
+
+    def should_return_directions_2_right_if_carpark_level_is_1_and_position_spot_is_2_away_from_exit():
+        assert (
+            get_car_park_directions(
+                Position(floor=1, spot=2), CarPark(spaces=2, levels=1, stairsPosition=1)
+            )
+            == "2R"
+        )
+
+
+## | 4 | 3 | *2 | 1 | Exit
+## | ST | 2* | 1 |
+## | ST | 2 | 1 | Exit
